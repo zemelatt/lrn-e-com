@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('../partials/adminheader.ejs')  %> 
+<body>
+<h1><a href="add-page">add new page</a></h1>
+<h2><a href="/admin/pages/add-page/load">load</a></h2>
+   <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr>
+            <%if(result.length>0){%>
+                <%result.forEach(function(rows){%>
+            <td><%=rows.title%> </td>
+            <td><a href="/admin/pages/edit-page/<%=rows.id%> ">Edit</a></td>
+            <td><a href="/admin/pages/delete-page<%=rows.id %> ">Delete</a></td>
+        </tr> 
+            <% }) } else{%>
+           
+                <% } %>
+        
+
+    </tbody>
+   </table>
+</body>
+</html>
