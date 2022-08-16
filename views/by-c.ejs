@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head.ejs') %> 
+<body>
+    <table id="choice">
+        <tr>
+            <th> <a href="/products">Check all products</a> </th>
+        </tr>
+        <tr>
+            <td id="catagory-list">
+                <%result.forEach(function(rows){%>
+                    <li> <a href="/products/<%=rows.title%> "> <%=rows.title%> </a></li>
+                    <% }) %> 
+            </td>
+        </tr>
+    </table>
+
+<div id="product-outputs">
+    <%byc.forEach(function(rows){%>
+        <div id="pimg">
+
+            <a href="/products/<%=rows.catagory%>"><img src="../admin/<%=rows.img%> " width="150" height="120" alt="img"></a> 
+               <li><%=rows.title%></li> 
+               <li><%=rows.price %></li>
+            <div class="dropdown">
+                <h6 id="disc">View Discription</h6>
+               <div class="dropdown-content">
+                <p><%=rows.description  %> </p>
+
+                </div>
+            </div>
+            <div>
+                <h5>Add to cart</h5>
+            </div>
+        </div>
+        <% }) %>
+</div>
+
+
+
+
+
+<%-include('./partials/footer.ejs')  %> 
+</body>
+</html>

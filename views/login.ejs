@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/intro-head.ejs') %> 
+<body>
+
+    <div id="err_msg">
+        <% if(errors !== ' '){ %> 
+            <% errors.forEach(function(item){ %> 
+                <%=item  %> 
+                <% }) %> 
+
+            <% } %> 
+    </div>
+
+
+<form action="/user/login" method="post">
+
+    <div class="main-container">
+
+        <div class="sub-main">
+            <h2 class="notes">Log in</h2>
+            <div class="subdiv">
+                <label class="lables" for="text">Email</label>
+                <p id="regi-err"></p> 
+                <input class="inputs" type="text" name="email" placeholder="Zemelatmen@gmail.com">
+                <label class="lables" for="password">Password</label>
+                <p id="regi-err"></p>
+                <input class="inputs"  type="password" name="password" placeholder="password">
+            </div>
+            <div id="subd">
+
+                <button type="submit" id="submit">Log in</button>
+            </div>
+            <p>if you don't have an account, Register now<a class="btn-register" href="/user/register"> Click here</a> </p>
+            
+        </div>
+    </div>
+</form>
+
+</div>
+
+</body>
+</html>

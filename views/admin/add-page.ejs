@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('../partials/adminheader.ejs')  %> 
+    <title>Admin</title>
+<body>
+    <% if(typeof alert != 'undefined'){ %> 
+        <% alert.forEach(function(error){ %>
+            <div role="alert"><%=error.msg;  %> </div> 
+        <% }) %> 
+        <% } %>
+    <form action="/admin/pages/add-page" method="post">
+        <div class="main-container">
+            <h2 class="notes">Rigister</h2>
+            <div class="sub-main">
+                <div class="subdiv">
+                    <label class="lables" for="text">title:</label>
+                    <input class="inputs" type="text" name="title" placeholder="title" value="<%=  %> ">
+                </div>
+                <!-- <div class="subdiv">
+                    <label class="lables" for="text">slug:</label>
+                    <input class="inputs"  type="text" name="slug" placeholder="slug" value="<%=  %> ">
+                </div> -->
+                <div class="subdiv">
+                    <label class="lables" for="text">content:</label>
+                    <textarea class="inputs" name="content" cols="30" rows="10" placeholder="content"><%=  %> </textarea>
+                </div>
+                <div class="submitdiv">
+                    <input type="submit" id="submit">
+                </div>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head.ejs') %> 
+<body>
+    <table id="choice">
+        <tr>
+            <th> <a id="products" href="/products">All Products</a> </th>
+        </tr>
+        <tr>
+
+                
+            <td id="catagory-list">
+                <%result.forEach(function(rows){%>
+                    <li><a href=""></a></li>
+                    <li > <a class="all-p" href="/products/<%=rows.catagory%>" ><%=rows.title%></a></li>
+                    <% }) %> 
+            </td>
+        </tr>
+    </table>
+
+<div id="product-outputs">
+    <%byc.forEach(function(row){%>
+
+        <div id="pimg">
+            <div id="image">
+                <a href="/products"><img src="../admin/<%=row.img%> " width="170" height="140" alt="img"></a> 
+            </div> 
+            <div id="tp">
+                <div id="p.title">
+                    <li id="title"><%=row.title%></li>
+                </div>
+                <div id="middle">
+                </div>
+                <div id="p.price">
+                    <li id="price"><%=row.price%>$</li>
+                </div>  
+            </div>
+            <div id="to-cart">
+                <a href="/cart/add/<%=row.id%> "><button type="submit" class="add-btn">Add to cart</button></a>
+            </div>
+        </div>
+       
+        <% }) %>
+</div>
+
+
+<%-include('./partials/footer.ejs')  %> 
+</body>
+
+</html>

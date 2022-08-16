@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('./partials/intro-head.ejs') %> 
+<body>
+    <div id="log-in">
+        <form id="logout-form" action="/user/logout" method="post">
+            <button class="btn-logout">Log out</button> 
+         </form>
+    </div> 
+    <% if(user.id == '2'){ %> 
+        <div class="admin-area">
+            <a href="/admin/pages">Go Admin pages</a>
+        </div>
+
+    <% }else {%>
+        <div id="starter">
+            <div class="moto-div"> 
+                <h5> <%=user.userName%></h5>
+                <h2 id="moto">Make Your Life Easy !!</h2>
+             </div>
+        </div>
+        <div id="intro"> <a href="/products">Buy now</a></div>
+        <% } %> 
+</body>
+</html>
