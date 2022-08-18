@@ -2,13 +2,17 @@
 <html lang="en">
 <%-include('./partials/head.ejs') %> 
 <body>
+    <div id="search">
+        <form method="post" action="/products">
+            <input id="search-input" type="search" name="search" placeholder="e.g Banana">
+            <button id="search-btn" type="submit">search</button>
+        </form>
+    </div>
     <table id="choice">
         <tr>
             <th> <a id="products" href="/products">All Products</a> </th>
         </tr>
-        <tr>
-
-                
+        <tr>  
             <td id="catagory-list">
                 <%result.forEach(function(rows){%>
                     <li><a href=""></a></li>
@@ -17,7 +21,7 @@
             </td>
         </tr>
     </table>
-
+    <% if(byc !== ""){ %> 
 <div id="product-outputs">
     <%byc.forEach(function(row){%>
 
@@ -39,8 +43,13 @@
                 <a href="/cart/add/<%=row.id%> "><button type="submit" class="add-btn">Add to cart</button></a>
             </div>
         </div>
-       
-        <% }) %>
+        <% })%>
+        <% }else{ %> 
+            <div>
+                <h1>no pro</h1>
+            </div>
+
+            <% } %>  
 </div>
 
 
