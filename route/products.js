@@ -40,9 +40,9 @@ router.post('', (req, res)=>{
     DB.con.query(`select * from products where title = "${search}"`, (err, result2)=>{
             res.render('products',{data,result,'byc':result2, title:'Products',user:req.user});
             console.log(result2)
-    })
-})
-})
+       }) 
+     })
+   })
 })
 router.get('/:catagory',forUSER,(req, res)=>{
     var cat =req.params.catagory;
