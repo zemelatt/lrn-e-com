@@ -31,6 +31,19 @@ router.get('',forUSER, (req, res)=>{
     })
 });
 
+router.post('', (req, res)=>{
+    var get3 = "select * from catagory";
+    DB.con.query(get3, (err, result)=>{
+    const get = 'select * from pages'
+    DB.con.query(get,(err, data)=>{
+    const search = req.body.search
+    DB.con.query(`select * from products where title = "${search}"`, (err, result2)=>{
+            res.render('products',{data,result,'byc':result2, title:'Products',user:req.user});
+            console.log(result2)
+    })
+})
+})
+})
 router.get('/:catagory',forUSER,(req, res)=>{
     var cat =req.params.catagory;
     var get2 = `select * from products where catagory='${cat}'`;
