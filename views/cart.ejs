@@ -1,52 +1,49 @@
-<%-include('./partials/head.ejs') %> 
-
-<%if(typeof check !== "undefined" ){%>
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>img</th>
-                <th>qty</th>
-                <th>options</th>
-                <th>price</th>
-                <th>sum</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% var total = 0; %> 
-
-            <%check.forEach(function(rows){%>
-        <% var sub = parseFloat(rows.price * rows.qty) %> 
-        <% total += +sub %> 
-        <tr>
-
-            <td><%=rows.title%> </td>
-            <td><img src="../admin/<%=rows.img%> " width="50" height="50" alt="img"></td>
-            <td><%=rows.qty%> </td>
-            <td> 
-                <a href="/cart/update/<%=rows.title%>?action=add">+</a>    
-                <a href="/cart/update/<%=rows.title%>?action=remove">-</a>
-                <a href="/cart/update/<%=rows.title%>?action=clear">clear</a>        
-            </td>
-            <td><%=rows.price%></td> 
-            <td><%=sub%></td>
-        </tr> 
-        <% }) %>
-        <tr>
-            <td><h4>Total cost: <%= total  %> </h4></td>
-        </tr>
-        <tr>
-            <!-- <td> <a href="/cart/clear"> <button>clear cart</button></a></td> -->
-            <td><a href="#"> <button>buy</button></a></td>
-        </tr>
-        <% }else{ %> 
-            <tr>
-                <div>
-                    <h2 id="no-pro">no products selected</h2>
-                </div>
-
-            </tr>
-
-        </tbody>
-    </table>
-    <% } %>
+<%-include('./partials/head.ejs') %> <%if(typeof check !== "undefined" ){%>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Photo</th>
+      <th>quantity</th>
+      <th>+ / -</th>
+      <th>Price</th>
+      <th>sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var total = 0; %> <%check.forEach(function(rows){%> <% var sub =
+    parseFloat(rows.price * rows.qty) %> <% total += +sub %>
+    <tr>
+      <td><%=rows.title%></td>
+      <td>
+        <img src="../admin/<%=rows.img%> " width="50" height="50" alt="img" />
+      </td>
+      <td><%=rows.qty%></td>
+      <td>
+        <a href="/cart/update/<%=rows.title%>?action=add">+</a>
+        <a href="/cart/update/<%=rows.title%>?action=remove">-</a>
+        <a href="/cart/update/<%=rows.title%>?action=clear">clear</a>
+      </td>
+      <td><%=rows.price%></td>
+      <td><%=sub%></td>
+    </tr>
+    <% }) %>
+    <!-- <tr> -->
+    <td>
+      <h4>Total cost: <%= total %>$</h4>
+      <!-- </tr> -->
+      <!-- <tr>
+      <td>
+        <a href="#"> <button>buy</button></a>
+      </td>
+    </tr> -->
+      <% }else{ %>
+      <tr>
+        <div>
+          <h2 id="no-pro">no products selected</h2>
+        </div>
+      </tr>
+    </td>
+  </tbody>
+</table>
+<% } %>

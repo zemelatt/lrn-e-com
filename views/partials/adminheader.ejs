@@ -1,184 +1,213 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../admin/cart.jpg">
-    <nav class="navbar">
-        <ul class="nav-op">
-            <li class="nav_li"><a class="nav a" href="../admin/pages">Pages</a></li>
-            <li class="nav li"><a class="nav a" href="/admin-catagory">Catagory</a></li>
-            <li class="nav li"><a class="nav a" href="/admin-products">Products</a></li>
-        </ul>
-        <ul class="nav-op2">
-            <li  class="li2"><a class="nav a" href="../login"></a></li>
-            <div id="log-in">
-                <form id="logout-form" action="/user/logout" method="post">
-                    <button class="btn-logout">Log out</button> 
-                 </form>
-            </div> 
-        </ul>
-    </nav>
-    <div class="container"><%- messages('messages', locals) %></div>
-<style>
-    *{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style-type: none;
-    color: rgb(20, 10, 5);
-}
-li a{
-    color: rgb(255, 255, 255);
-    padding-left: 20px;
-    padding: 10px;
-}
-.navbar{
-    width: 100%;
-    display: flex;
-    background-color: rgb(201, 96, 10);
-    font-size: 20px;
-    height: 100px;
-    text-decoration: none;
-}
-.nav-op{
-    display: flex;
-    width: 79%;
-    padding: 70px;
-    padding-bottom: 20px;
-}
-.nav-op2{
-    display: flex;
-    float: right;
-    width: 15%;
-    padding: 20px;
-}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../admin/cart.jpg" />
+  <nav class="navbar">
+    <ul class="nav-op">
+      <li class="nav_li"><a class="nav a" href="../admin/pages">Pages</a></li>
+      <!-- <li class="nav li">
+        <a class="nav a" href="/admin-catagory">Catagory</a>
+      </li> -->
+      <li class="nav li">
+        <a class="nav a" href="/admin-products">Products</a>
+      </li>
+      <li class="nav li">
+        <div class="nav a">
+          <form id="logout-form" action="/user/logout" method="post">
+            <button class="btn-logout">Logout</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="container"><%- messages('messages', locals) %></div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style-type: none;
+      color: rgb(20, 10, 5);
+    }
+    li a {
+      color: rgb(255, 255, 255);
+      padding-left: 20px;
+      padding: 10px;
+    }
+    .navbar {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      background-color: rgb(201, 96, 10);
+      font-size: 20px;
+      min-height: 2em;
+      text-decoration: none;
+    }
+    .nav-op {
+      display: flex;
+      width: 100%;
+    }
+    .nav-op2 {
+      display: flex;
+      float: right;
+      min-width: 25%;
+      height: auto;
+    }
 
-#footerdiv{
-    width: 100%;
-    height: 50px;
-    background-color: aqua;
-    margin-top: 506px;
-}
-.footer{
-    color: black;
-    margin-left: 600px;
-    font-size: 20px;
-    padding-top: 40px;
+    #footerdiv {
+      width: 100%;
+      height: 50px;
+      background-color: aqua;
+      margin-top: 506px;
+    }
+    .footer {
+      color: black;
+      margin-left: 600px;
+      font-size: 20px;
+      padding-top: 40px;
+    }
+    .foot {
+      padding-top: 15px;
+    }
+    .main-container {
+      background-color: aliceblue;
+      max-width: 400px;
+      height: auto;
+      border: 2px solid rgb(216, 120, 11);
+      border-radius: 30px;
+    }
+    .sub-main {
+      /* margin-bottom: 0px; */
+      padding: 5px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    #submit {
+      width: 100px;
+      height: 30px;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+    .subdiv {
+      /* padding: 35px 10px 10px 10px; */
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+    }
+    .submitdiv {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .notes {
+      text-align: center;
+    }
+    .catagory_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5em;
+    }
+    .inputs {
+      width: 80%;
+      max-height: 25px;
+    }
+    #addnew {
+      background-color: rgb(205, 219, 219);
+      text-align: center;
+      width: 198px;
+      height: 30px;
+      margin-left: 2px;
+      margin-top: 40px;
+      font-size: 18px;
+      padding-top: 8px;
+    }
+    #load {
+      width: 198px;
+      height: 30px;
+      background-color: rgb(89, 108, 109);
+      margin-left: 2px;
+      text-align: center;
+      font-size: 20px;
+      padding-top: 8px;
+    }
+    .products-container {
+      background-color: beige;
+      border: 2px solid black;
+      margin-left: 200px;
+      width: 800px;
+      height: auto;
+      margin-top: -20px;
+      float: left;
+      border-radius: 10px;
+    }
+    #add-product {
+      background-color: rgb(43, 226, 195);
+      height: 20px;
+      width: 140px;
+      margin-top: 40px;
+      margin-left: 25px;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 70%;
+    }
 
-}
-.foot{
-   padding-top: 15px;
-}
-.main-container{
-    background-color: aliceblue;
-    width: 300px;
-    height: auto;
-    margin-left: 750px;
-    margin-top: 100px;
-    border: 2px solid rgb(216, 120, 11);
-    border-radius: 30px;
-}
-.sub-main{
-    margin-bottom: 0px;
-    padding: 5px;
-    padding-bottom: 20px;
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
 
-}
-#submit{
-    width: 100px;
-    height: 30px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    margin-top: 30px;
-    border-radius: 8px;   
-}
-.subdiv{
-    padding: 35px 10px 10px 10px;
-    height: 15px;
-
-}
-.submitdiv{
-    margin-left: 300px;
-    padding: 10px 10px;
-    width: 100px;
-    height: 45px;
-    margin-top: -30px;
-}
-.notes{
-    margin-left: 100px;
-    margin-top: 15px;
-}
-.inputs{
-    width: 200px;
-    height: 25px;                    
-}
-#addnew{
-    background-color: rgb(205, 219, 219);
-    text-align: center;
-    width: 198px;
-    height: 30px;
-    margin-left: 2px;
-    margin-top: 40px;
-    font-size: 18px;
-    padding-top: 8px;
-}
-#load{
-    width: 198px;
-    height: 30px;
-    background-color:  rgb(89, 108, 109);
-    margin-left: 2px;
-    text-align: center;
-    font-size: 20px;
-    padding-top: 8px;
-}
-.products-container{
-    background-color: beige;
-    border: 2px solid black;
-    margin-left: 200px;
-    width: 800px;
-    height: auto;
-    margin-top: -20px;
-    float: left;
-    border-radius: 10px;
-}
-#add-product{
-    background-color: rgb(43, 226, 195);
-    height: 20px;
-    width: 140px;
-    margin-top: 40px;
-    margin-left: 25px;
-
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 70%;
-  margin-left: 200px;
-  margin-top: -76px;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-#err_msg{
-    background-color: rgb(226, 190, 123);
-}
-.btn-logout{
-    background-color: rgb(212, 118, 55);
-    font-size: 19px;
-    color: white;
-    margin-top: 50px;
-    margin-left: 25px;
-    border: 1px solid rgb(212, 118, 55);
-}
-
-</style>
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    #err_msg {
+      background-color: rgb(226, 190, 123);
+    }
+    .btn-logout {
+      background-color: inherit;
+      font-size: 19px;
+      color: white;
+      border: 1px solid rgb(212, 118, 55);
+    }
+    .pagePart {
+      width: 90%;
+      gap: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    .addService {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5em;
+    }
+    @media only screen and (max-width: 400px) {
+      .nav-op {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+      }
+    }
+  </style>
 </head>
-
-

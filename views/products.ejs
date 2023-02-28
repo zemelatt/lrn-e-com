@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include('./partials/head.ejs') %> 
-<body>
+  <%-include('./partials/head.ejs') %>
+  <body>
     <div id="search">
-        <form method="post" action="/products">
-            <input id="search-input" type="search" name="search" placeholder="e.g Banana">
-            <button id="search-btn" type="submit">search</button>
-        </form>
+      <form method="post" action="/products">
+        <input
+          id="search-input"
+          type="search"
+          name="search"
+          placeholder="e.g Banana"
+        />
+        <span> <button id="search-btn" type="submit">Search</button></span>
+      </form>
     </div>
-    <table id="choice">
-        <tr>
-            <th> <a id="products" href="/products">All Products</a> </th>
-        </tr>
-        <tr>  
-            <td id="catagory-list">
-                <%result.forEach(function(rows){%>
-                    <li><a href=""></a></li>
-                    <li > <a class="all-p" href="/products/<%=rows.catagory%>" ><%=rows.title%></a></li>
-                    <% }) %> 
-            </td>
-        </tr>
-    </table>
-    <% if(byc !== ""){ %> 
-<div id="product-outputs">
-    <%byc.forEach(function(row){%>
+    <!-- <table id="choice">
+      <tr>
+        <th><a id="products" href="/products">All Products</a></th>
+      </tr>
+      <tr>
+        <td id="catagory-list">
+          <%result.forEach(function(rows){%>
+          <li><a href=""></a></li>
+          <li>
+            <a class="all-p" href="/products/<%=rows.catagory%>"
+              ><%=rows.title%></a
+            >
+          </li>
+          <% }) %>
+        </td>
+      </tr>
+    </table> -->
+    <% if(byc !== ""){ %>
+    <div id="product-outputs">
+      <%byc.forEach(function(row){%>
 
-        <div id="pimg">
-            <div id="image">
-                <a href="/products"><img src="../admin/<%=row.img%> " width="170" height="140" alt="img"></a> 
-            </div> 
-            <div id="tp">
-                <div id="p.title">
-                    <li id="title"><%=row.title%></li>
-                </div>
-                <div id="middle">
-                </div>
-                <div id="p.price">
-                    <li id="price"><%=row.price%>$</li>
-                </div>  
-            </div>
-            <div id="to-cart">
-                <a href="/cart/add/<%=row.id%> "><button type="submit" class="add-btn">Add to cart</button></a>
-            </div>
+      <div id="pimg">
+        <div id="image">
+          <a href="/products"
+            ><img src="../admin/<%=row.img%> " alt="img" class="imageProduct"
+          /></a>
         </div>
-        <% })%>
-        <% }else{ %> 
-            <div>
-                <h1>no pro</h1>
-            </div>
+        <div id="tp">
+          <div id="p.title">
+            <li id="title"><%=row.title%></li>
+          </div>
+          -
+          <div id="p.price">
+            <li id="price"><%=row.price%>$</li>
+          </div>
+        </div>
+        <div id="to-cart">
+          <a href="/cart/add/<%=row.id%> "
+            ><button type="submit" class="add-btn">Add to cart</button></a
+          >
+        </div>
+      </div>
+      <% })%> <% }else{ %>
+      <div>
+        <h1>no products</h1>
+      </div>
 
-            <% } %>  
-</div>
+      <% } %>
+    </div>
 
-
-<%-include('./partials/footer.ejs')  %> 
-</body>
-
+    <%-include('./partials/footer.ejs') %>
+  </body>
 </html>

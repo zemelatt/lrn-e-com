@@ -1,242 +1,288 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../admin/cart.jpg">
-    <title><%=title %>  </title>
-    <style>
-        *{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-        }
-        #mainbar{
-            width: 100%;
-            background-color: rgb(219, 114, 15);
-            font-size: 20px;
-            height: 100px;
-            text-decoration: none;
-        }
-        nav ul li a{
-            color: aliceblue;
-            text-decoration: none;
-        }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../admin/cart.jpg" />
+  <title><%=title %></title>
+  <style>
+    * {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+    }
+    #mainbar {
+      width: 100%;
+      background-color: rgb(219, 114, 15);
+      font-size: 25px;
+      height: auto;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+    }
 
-        .nav-op{
-            width: 59%;
-            padding-top: 70px;
-            font-size: 22px;
-            font-family: sans-serif;
-        } 
-        .nav-op2{
-            float: right;
-            width: 20%;
-            height: 10px;            
-            padding-top: 61px;
-            margin-top: -95px;
-            display: flex;
-        }
-        .li1{
-            padding-left: 20px;
-            display: inline;
-        }
-        .li2{
-            margin-top: 10px;
-            padding-right: 15px;
-        } 
-        .notes{
-            margin-left: 100px;
-            margin-top: 15px;
-        }
-        .inputs{
-            width: 200px;
-            height: 25px;
-        }
-        #footerdiv{
-            width: 100%;
-            height: 50px;
-            background-color: aqua;
-            margin-top: 506px;
-        }
-        .footer{
-            color: black;
-            margin-left: 600px;
-            font-size: 20px;
-            padding-top: 40px;
-        }
-        .foot{
-           padding-top: 15px;
-        }
-        #choice{
-            width: 200px;
-            height: auto;
-            margin-left: 10px;
-            margin-top: 20px;
-            background-color: rgb(221, 99, 43);
-            padding: 10px;
-            text-align: center;
-        }
-        #products{
-            margin-left: 45px;
-        }
-        .all-p{
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: 500;
-            font-size: 19px;
-        }
-        #catagory-list{
-            padding-left: 30px;
-            background-color: rgb(224, 224, 191);
-            font-family: Helvetica, sans-serif;
-        }
-        #product-outputs{
-            margin-left: 220px;
-            margin-top: -98px;
-            height: auto;
-            width: 980px;
-            background-color: rgb(214, 203, 203);
-            padding-left: 0px;
-            padding: 20px;
-            /* display: inline-block; */
-        }
-        #pimg{
-            display: inline-block;
-            width: 170px;
-            background-color: blanchedalmond;
-        }
-        #tp{
-            display: flex;
-            background-color: rgb(243, 143, 12);
-            padding-left: 10px;
-        }
-        #to-cart{
-            float: left;
-            cursor: pointer;
-            background-color: #dddddd;
-        }
-        #p.price{
-            float: left;
-        }
-        #p.title{
-            background-color: aliceblue;
-        }
-        #middle{
-            width: 100px;
-        }
-        #to-cart{
-            margin-left: 50px;
-        }
-        .add-btn{
-            background-color: #1cc584;
-            color: white;
-            border: 1px solid white;
-            cursor: pointer;
-        }
-        #disc{
-            height: auto;
-            width: 100px;
-            border: 2px solid black;
-            border-radius: 8px;
-            background-color: aquamarine;
-        }
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 70%;
-        margin-left: 200px;
-        margin-top: 25px;
-        }
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-        #err_msg{
-            background-color: rgb(226, 190, 123);
-        }
-        #no-pro{
-            width: 220px;
-            height: 25px;
-            background-color: rgb(201, 25, 25);
-            color: aliceblue;
-            margin-left: 500px;
-            margin-top: 250px;
-        }
-        #starter{
-            width: 600px;
-            height: 100px;
-            background-color: rgb(223, 173, 108);
-            margin-left: 320px;
-            margin-top: 150px;
-            font-family: sans-serif;
-        }
-        .moto-div{
-            text-align: center;
-            padding-top: 20px;
-        }
-        .to-mean{
-            text-align: center;
-            padding-top: 20px;
-        }
-        #intro{
-            width: 100px;
-            height: 25px;
-            background-color: #c57c1c;
-            margin-left: 550px;
-            margin-top: 100px;
-            text-align: center;
-            border-radius: 10px;
-            cursor: pointer;
-            padding-top: 4px;
-        }
-        .logout-btn{
-            background-color: #c57c1c;
-            font-size: 18px;
-            border: 1px solid #c57c1c;
-            cursor: pointer;
-        }
-        #search-input{
-            width: 200px;
-            border-radius: 9px;
-        }
-        #search{
-            float: right;
-        }
-        #search-btn{
-            width: 80px;
-            background-color: #0b3b0b;
-            color: white;
-        }
-    </style>
-        <nav id="mainbar">
-                <ul class="nav-op">
-                    <%data.forEach(function(rows){%>
-                        <li class="li1"><a href="/<%=rows.id%> "><%=rows.title%></a></li>
-                        <% }) %> 
-                </ul>
-                <ul class="nav-op2">
-                    <li class="li2" > </li>
-                    <li class="li2" ><a href="/cart/checkout">My Cart(
-                        <% if(typeof cart !== "undefined") {%> 
-                            <%=cart.length %> 
-                            <% }else{%> 
-                                0
-                                <% } %> 
-                        )</a></li>
-                            <form action="/user/logout" method="post">
-                                <li class="li2"><button class="logout-btn"> Log out</button> </li>
-                              
-                            </form>
-<<<<<<< HEAD
-=======
+    nav ul li a {
+      color: aliceblue;
+      text-decoration: none;
+    }
 
+    /* .nav-op {
+      max-width: 50%;
+      background-color: #1eb40a;
+      padding-top: 70px;
+      font-size: 22px;
+      font-family: sans-serif;
+    } */
+    .nav-op2 {
+      font-size: calc(1em + 0.1vw);
+      width: 100%;
+      /* min-height: 10px; */
+      /* padding-top: 61px;
+      margin-top: -100px; */
+      display: flex;
+      align-items: end;
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
->>>>>>> 46c88eadc581be4e118c4d9f2add4f26836e6fe9
-                </ul>
-            </nav>
-    <div class="container"><%- messages('messages', locals) %></div>
+    .li1 {
+      padding-left: 20px;
+      display: inline;
+    }
+    .li2 {
+      margin-top: 10px;
+      padding-right: 15px;
+    }
+    .notes {
+      margin-left: 100px;
+      margin-top: 15px;
+    }
+    .inputs {
+      width: 200px;
+      height: 25px;
+    }
+    #footerdiv {
+      max-width: 100%;
+      height: 50px;
+      background-color: aqua;
+      margin-top: 506px;
+    }
+    .footer {
+      color: black;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 20px;
+      padding-top: 40px;
+    }
+    .foot {
+      padding-top: 15px;
+    }
+    #choice {
+      max-width: 14em;
+      height: auto;
+      margin-left: 10px;
+      margin-top: 20px;
+      background-color: rgb(221, 99, 43);
+      padding: 10px;
+      text-align: center;
+    }
+    #products {
+      margin-left: 45px;
+    }
+    .all-p {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 500;
+      font-size: 19px;
+    }
+    #catagory-list {
+      padding-left: 30px;
+      background-color: rgb(224, 224, 191);
+      font-family: Helvetica, sans-serif;
+    }
+    #product-outputs {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 4em;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      height: auto;
+      background-color: rgb(232, 232, 232);
+      border-radius: 15px;
+      gap: 2em;
+      padding: 1em;
+    }
+    #pimg {
+      /* display: inline-block; */
+      width: 20em;
+      max-height: 19em;
+      background-color: rgb(255, 254, 253);
+      border: 2px solid black;
+      border-radius: 15px;
+    }
+    .image {
+      max-height: 7em;
+      max-width: 15em;
+    }
+    .imageProduct {
+      max-height: 12em;
+      width: 100%;
+      border-radius: 12px;
+    }
+    #tp {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 90%;
+      min-height: 2em;
+    }
+    #to-cart {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+      background-color: #dddddd;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* #p.price {
+      float: left;
+    }
+    #p.title {
+      background-color: aliceblue;
+    } */
+
+    .add-btn {
+      max-width: 10em;
+      height: 2.4em;
+      padding: 0 0.5em;
+      background-color: #c3640c;
+      color: white;
+      border: 1px solid white;
+      cursor: pointer;
+      border-radius: 10px 0px 10px 0px;
+      float: right;
+      margin-bottom: 0;
+    }
+    #disc {
+      height: auto;
+      width: 100px;
+      border: 2px solid black;
+      border-radius: 8px;
+      background-color: aquamarine;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    #err_msg {
+      background-color: rgb(226, 190, 123);
+    }
+
+    #no-pro {
+      width: 100%;
+      height: auto;
+      color: rgb(41, 43, 46);
+      background-color: rgb(197, 124, 28, 0.6);
+      padding: 0.5em 1em;
+      margin: auto;
+      margin-top: 5em;
+      text-align: center;
+    }
+    #starter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 600px;
+      height: 100px;
+      background-color: rgb(223, 173, 108);
+      font-family: sans-serif;
+    }
+    .moto-div {
+      text-align: center;
+      padding-top: 20px;
+    }
+    .to-mean {
+      text-align: center;
+      padding-top: 20px;
+    }
+    #intro {
+      width: 100px;
+      height: 25px;
+      background-color: #c57c1c;
+      margin-left: 550px;
+      margin-top: 100px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      padding-top: 4px;
+    }
+    .logout-btn {
+      background-color: inherit;
+      font-size: 18px;
+      border: 1px solid #c57c1c;
+      cursor: pointer;
+    }
+    #search-input {
+      font-size: 1em;
+      width: 70%;
+      height: 1.6em;
+      border-radius: 9px;
+    }
+    #search {
+      display: flex;
+      gap: 0.4em;
+      max-height: auto;
+      margin-top: 1em;
+      float: right;
+      text-align: end;
+    }
+    #search-btn {
+      min-width: 4em;
+      border: 1px solid green;
+      border-radius: 10px 10px;
+      height: 1.6em;
+      background-color: #1eb40a;
+      color: rgb(255, 255, 255);
+      font-size: 1em;
+      text-align: center;
+    }
+  </style>
+  <nav id="mainbar">
+    <!-- <ul class="nav-op">
+      <%data.forEach(function(rows){%>
+      <li class="li1"><a href="/<%=rows.id%> "><%=rows.title%></a></li>
+      <% }) %>
+    </ul> -->
+    <ul class="nav-op2">
+      <li class="li2">
+        <a href="/cart/checkout"
+          >My Cart( <% if(typeof cart !== "undefined") {%> <%=cart.length %> <%
+          }else{%> 0 <% } %> )</a
+        >
+      </li>
+      <form action="/user/logout" method="post">
+        <li class="li2"><button class="logout-btn">Log out</button></li>
+      </form>
+    </ul>
+  </nav>
+  <div class="container"><%- messages('messages', locals) %></div>
 </head>

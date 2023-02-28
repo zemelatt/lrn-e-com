@@ -1,36 +1,41 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Catagory</title>
-<body>
-    <body >
-        <div id="addnew">
-            <h4 class="addprod"><a href="/admin-catagory/add-catagory">Add new Catagory</a></h4>
-    
-        </div>
-    <div id="load">
-        <h4 class="addprod"><a href="/admin-catagory/load">See products</a></h4>
-    </div>
-<table>
-    <thead>
-        <tr>
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Catagory</title>
+  <body>
+    <div class="pagePart">
+      <div id="addnew">
+        <h4 class="addprod">
+          <a href="/admin-catagory/add-catagory">Add new Catagory</a>
+        </h4>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
             <th>Catagory</th>
             <th>Edit</th>
             <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <%if(result.length>0){%>
-                <%result.forEach(function(rows){%>
-            <td><%=rows.title%> </td>
-            <td><a href="/admin-catagory/edit-catagory/<%=rows.id%> ">Edit</a></td>
-            <td><a href="/admin-catagory/delete-catagory/<%=rows.id %> ">Delete</a></td>
-        </tr> 
-            <% }) } else{%>
-                <h3>no Catagory</h3>
-                <% } %>
-    </tbody>
- </table>
-</body>
-</html>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <%if(result.length>0){%> <%result.forEach(function(rows){%>
+            <td><%=rows.title%></td>
+            <td>
+              <a href="/admin-catagory/edit-catagory/<%=rows.id%> ">Edit</a>
+            </td>
+            <td>
+              <a href="/admin-catagory/delete-catagory/<%=rows.id %> "
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <% }) } else{%>
+          <h3>No Catagory Add</h3>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html> -->

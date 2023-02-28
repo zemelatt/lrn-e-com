@@ -1,32 +1,39 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Catagory</title>
-<body>
-    <% if(typeof alert != 'undefined'){ %> 
-        <% alert.forEach(function(error){ %>
-            <div role="alert"><%=error.msg;  %> </div> 
-        <% }) %> 
-        <% } %>
-    <form action="/admin-catagory/add-catagory" method="post">
-        <div class="main-container">
-            <h2 class="notes">Add Catagorys</h2>
-            <div class="sub-main">
-                <div class="subdiv">
-                    <label class="lables" for="text">title:</label>
-                    <input class="inputs" type="text" name="title" placeholder="title" value="<%=  %> ">
-                </div>
-                <!-- <div class="subdiv">
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Catagory</title>
+  <body>
+    <% if(typeof alert != 'undefined'){ %> <% alert.forEach(function(error){ %>
+    <div role="alert"><%=error.msg; %></div>
+    <% }) %> <% } %>
+    <form
+      class="catagory_container"
+      action="/admin-catagory/add-catagory"
+      method="post"
+    >
+      <div class="main-container">
+        <h2 class="notes">Add Catagorys</h2>
+        <div class="sub-main">
+          <div class="subdiv">
+            <label class="lables" for="text">title:</label>
+            <input
+              class="inputs"
+              type="text"
+              name="title"
+              placeholder="title"
+              value="<%=  %> "
+            />
+          </div>
+          <!-- <div class="subdiv">
                     <label class="lables" for="text">slug:</label>
                     <input class="inputs"  type="text" name="slug" placeholder="slug" value="<%=  %> ">
                 </div> -->
 
-                <div class="submitdiv">
-                    <input type="submit" id="submit">
-                </div>
-            </div>
-            
+          <div class="submitdiv">
+            <input type="submit" id="submit" />
+          </div>
         </div>
+      </div>
     </form>
-</body>
-</html>
+  </body>
+</html> -->

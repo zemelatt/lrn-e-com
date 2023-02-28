@@ -1,25 +1,50 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Catagory</title>
-<body>
-    <% if(typeof alert != 'undefined'){ %> 
-        <% alert.forEach(function(error){ %>
-            <div role="alert"><%=error.msg;  %> </div> 
-        <% }) %> 
-        <% } %>
-        <%if(result.length>0){%>
-            <%result.forEach(function(rows){%>
-    <form action="/admin-catagory/edit-catagory/<%=rows.id%>"method="POST">
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Catagory</title>
+  <body>
+    <% if(typeof alert != 'undefined'){ %> <% alert.forEach(function(error){ %>
+    <div role="alert"><%=error.msg; %></div>
+    <% }) %> <% } %> <%if(result.length>0){%> <%result.forEach(function(rows){%>
+    <form
+      class="catagory_container"
+      action="/admin-catagory/edit-catagory/<%=rows.id%>"
+      method="POST"
+    >
+      <div class="main-container">
+        <h2 class="notes">Edit Catagory</h2>
+        <div class="sub-main">
+          <div class="subdiv">
+            <label class="lables" for="text">title:</label>
+            <input
+              class="inputs"
+              type="text"
+              name="title"
+              placeholder="title"
+              value="<%=rows.title %> "
+            />
 
-        <div class="main-container">
-            <h2 class="notes">Edit Catagory</h2>
-            <div class="sub-main">
-                <div class="subdiv">
-                    <label class="lables" for="text">title:</label>
-                    <input class="inputs" type="text" name="title" placeholder="title" value="<%=rows.title %> ">
-                </div>
-                <!-- <div class="subdiv">
+            
+
+            <input type="submit" id="submit" />
+          </div>
+        </div>
+      </div>
+      <% }) } else{%> <% } %>
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+ -->
+
+<!-- <div class="subdiv">
                     <label class="lables" for="text">slug:</label>
                     <input class="inputs"  type="text" name="slug" placeholder="slug" value="<%=rows.slug  %> ">
                 </div>
@@ -27,16 +52,3 @@
                     <label class="lables" for="text">content:</label>
                     <textarea class="inputs" name="content" cols="30" rows="10" placeholder="content"><%=rows.content  %> </textarea>
                 </div> -->
-                <div class="submitdiv">
-                    <input type="submit" id="submit">
-                </div>
-            </div>
-            
-        </div>
-        <% }) } else{%>
-           
-            <% } %>
-    
-    </form>
-</body>
-</html>

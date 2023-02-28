@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('./partials/intro-head.ejs') %> 
-<body>
+  <%-include('./partials/intro-head.ejs') %>
+  <body>
     <div id="err_msg">
-        <% if(errors !== ' '){ %> 
-            <% errors.forEach(function(item){ %> 
-                <%=item  %> 
-                <% }) %> 
-
-            <% } %> 
+      <% if(errors !== ' '){ %> <% errors.forEach(function(item){ %> <%=item %>
+      <% }) %> <% } %>
     </div>
 
-
-
-<form id="reg-form" action="/user/register" method="post">
-
-<div class="main-container">
-
+    <form id="reg-form" action="/user/register" method="post">
+      <div class="main-container">
         <div class="sub-main">
-            <h2 class="notes">Rigister</h2>
-            <div class="subdiv">
- 
-                <label class="lables" for="text">User name</label>
-                <input class="inputs" type="text" name="username" placeholder="Zemelat">
+          <h2 class="notes">Rigister</h2>
+          <div class="subdiv">
+            <label class="lables" for="text">User name</label>
+            <input
+              class="inputs"
+              type="text"
+              name="username"
+              placeholder="Zemelat"
+            />
 
-                <label class="lables" for="email">Email</label>
-                <p id="regi-err"></p> 
-                <input class="inputs"  type="email" name="email" placeholder="zemelat@gmail.com">
+            <label class="lables" for="email">Email</label>
+            <p id="regi-err"></p>
+            <input
+              class="inputs"
+              type="email"
+              name="email"
+              placeholder="zemelat@gmail.com"
+            />
 
-                <label class="lables" for="password">Password</label>
-                <input class="inputs"  type="password" name="password" placeholder="password">
-                <label class="lables" for="password">ConfirmPassword</label>
-                <input class="inputs"  type="password" name="ConfirmPassword" placeholder="confirm password">
-            </div>
+            <label class="lables" for="password">Password</label>
+            <input
+              class="inputs"
+              type="password"
+              name="password"
+              placeholder="password"
+            />
+            <label class="lables" for="password">ConfirmPassword</label>
+            <input
+              class="inputs"
+              type="password"
+              name="ConfirmPassword"
+              placeholder="confirm password"
+            />
+          </div>
 
-            <div class="submitdiv">
-                <button type="submit" id="submit">Register</button>
-            </div>
-            <div id="con-login">
-                <p>if you already have an account, Log-in now<a class="btn-register" href="/user/login"> Click here</a> </p>
-            </div>
-           
+          <div class="submitdiv">
+            <button type="submit" id="submit">Register</button>
+          </div>
+          <div id="con-login">
+            <p>
+              if you already have an account, Log-in now<a
+                class="btn-register"
+                href="/user/login"
+              >
+                Click here</a
+              >
+            </p>
+          </div>
         </div>
-        
-    </div>
-
-</form>
-</body>
+      </div>
+    </form>
+  </body>
 </html>

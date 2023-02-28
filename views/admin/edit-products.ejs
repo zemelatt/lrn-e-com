@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Catagory</title>
-<body>
-    <% if(typeof alert != 'undefined'){ %> 
-        <% alert.forEach(function(error){ %>
-            <div role="alert"><%=error.msg;  %> </div> 
-        <% }) %> 
-        <% } %>
-        <%if(result1.length>0){%>
-            <%result1.forEach(function(rows){%>
-    <form action="/admin-products/edit-products/<%=rows.id%>"method="POST">
-
-        <div class="main-container">
-            <h2 class="notes">Edit Products</h2>
-            <div class="sub-main">
-                <div class="subdiv">
-                    <label class="lables" for="text">title:</label>
-                    <input class="inputs" type="text" name="title"  value="<%=rows.title %> ">
-                    <!-- <input class="inputs" type="hidden" name="slug" value="<%=rows.slug %> "> -->
-                </div>
-                <div class="subdiv">
-                    <label class="lables" for="text">Discription</label>
-                <textarea name="description" id="" cols="30" rows="5"  value="<%rows.description%> "></textarea>
-                </div>
-                <div class="subdiv">
-                    <label class="lables" for="text">Catagorys:</label>
-                    <input class="inputs" type="text" name="catagory" value="<%=rows.catagory%> ">
-                </div>
-
-                <div class="subdiv">
-                    <label class="lables" for="text">Price:</label>
-                    <input class="inputs" type="text" name="price" value="<%=rows.price %> ">
-                </div>
-                <div class="submitdiv">
-                    <input type="submit" id="submit">
-                </div>
-                <div class="subdiv">
-                    <input class="inputs" type="hidden" name="id" value="<%=rows.id %> ">
-                    <input class="inputs" type="hidden" name="img" value="<%=rows.img%> ">
-                </div>
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Catagory</title>
+  <body>
+    <% if(typeof alert != 'undefined'){ %> <% alert.forEach(function(error){ %>
+    <div role="alert"><%=error.msg; %></div>
+    <% }) %> <% } %> <%if(result1.length>0){%>
+    <%result1.forEach(function(rows){%>
+    <form
+      class="catagory_container"
+      action="/admin-products/edit-products/<%=rows.id%>"
+      method="POST"
+    >
+      <div class="main-container">
+        <h2 class="notes">Edit Products</h2>
+        <div class="sub-main">
+          <div class="subdiv">
+            <label class="lables" for="text">Title</label>
+            <div>
+              <input
+                class="inputs"
+                type="text"
+                name="title"
+                value="<%=rows.title %> "
+              />
             </div>
-            
+            <!-- <input class="inputs" type="hidden" name="slug" value="<%=rows.slug %> "> -->
+
+            <label class="lables" for="text">Discription</label>
+            <div>
+              <textarea
+                name="description"
+                id=""
+                cols="30"
+                rows="5"
+                value="<%rows.description%> "
+              ></textarea>
+            </div>
+
+            <label class="lables" for="text">Catagorys:</label>
+            <div>
+              <input
+                class="inputs"
+                type="text"
+                name="catagory"
+                value="<%=rows.catagory%> "
+              />
+            </div>
+
+            <label class="lables" for="text">Price:</label>
+            <div>
+              <input
+                class="inputs"
+                type="text"
+                name="price"
+                value="<%=rows.price %> "
+              />
+            </div>
+
+            <input type="submit" id="submit" />
+
+            <input
+              class="inputs"
+              type="hidden"
+              name="id"
+              value="<%=rows.id %> "
+            />
+            <input
+              class="inputs"
+              type="hidden"
+              name="img"
+              value="<%=rows.img%> "
+            />
+          </div>
         </div>
-        <% }) } else{%>
-           
-            <% } %>
-    
+      </div>
+      <% }) } else{%> <% } %>
     </form>
-</body>
+  </body>
 </html>

@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Products</title>
-<body >
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Products</title>
+  <div class="pagePart">
     <div id="addnew">
-        <h4 class="addprod"><a href="/admin-products/add-products">Add new Products</a></h4>
-
+      <h4 class="addprod">
+        <a href="/admin-products/add-products">Add new Products</a>
+      </h4>
     </div>
-<div id="load">
-    <h5 class="addprod"><a href="/admin-products/load">See Products</a></h5>
-</div>
+    <!-- <div id="load">
+      <h5 class="addprod"><a href="/admin-products/load">See Products</a></h5>
+    </div> -->
 
-<%if(result1.length>0){%>
-<table>
-    <thead>
+    <%if(result1.length>0){%>
+    <table>
+      <thead>
         <tr>
-            <th>Products</th>
-            <th>price</th>
-            <th>Catagory</th>
-            <th>Description</th>
-            <th>Product image</th>
-            <th>Edit</th>
-            <th>Delete</th>
+          <th>Products</th>
+          <th>price</th>
+          <th>Catagory</th>
+          <th>Description</th>
+          <th>Product image</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr>
-            <%result1.forEach(function(rows){%>
-        <td><%=rows.title%></td>
-        <td><%=rows.price%>$</td>
-        <td><%=rows.catagory%></td>
-        <td><%=rows.description%></td> 
-        <td> <% if(!rows.img ==''){ %>
-                <img src="../admin/<%=rows.img%> " width="50" height="50" alt="img">
+          <%result1.forEach(function(rows){%>
+          <td><%=rows.title%></td>
+          <td><%=rows.price%>$</td>
+          <td><%=rows.catagory%></td>
+          <td><%=rows.description%></td>
+          <td>
+            <% if(!rows.img ==''){ %>
+            <img
+              src="../admin/<%=rows.img%> "
+              width="50"
+              height="50"
+              alt="img"
+            />
             <% } else{%>
-                <img src="../admin/no_img.jpg"  height="50" width="50" alt="no img">
-            <% } %> 
-        </td>
-        <td><a href="/admin-products/edit-products/<%=rows.id%> ">Edit</a></td>
-        <td><a href="/admin-products/delete-products/<%=rows.id %> ">Delete</a></td>
-    </tr>
-    <% }) } else{%>
-        <h2>no products</h2>
-             <% } %>
-    </tbody>
-</table>
-      
+            <img
+              src="../admin/no_img.jpg"
+              height="50"
+              width="50"
+              alt="no img"
+            />
+            <% } %>
+          </td>
+          <td>
+            <a href="/admin-products/edit-products/<%=rows.id%> ">Edit</a>
+          </td>
+          <td>
+            <a href="/admin-products/delete-products/<%=rows.id %> ">Delete</a>
+          </td>
+        </tr>
+        <% }) } else{%>
+        <h2>Back to products or no Product added</h2>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
 </html>

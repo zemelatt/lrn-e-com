@@ -1,54 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Add product</title>
-    <body>
-        <div id="add-product">
-            <h4 class="addpro"><a href="/admin-products">Back To products</a></h4>
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Add product</title>
+  <body>
+    <div id="add-product">
+      <h4 class="addpro"><a href="/admin-products">Back To products</a></h4>
+    </div>
+    <div class="products-container">
+      <form
+        class="addService"
+        action="/admin-products/add-products"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div id="err_msg">
+          <% if(typeof alert != 'undefined'){ %> <%
+          alert.forEach(function(error){ %>
+          <div role="alert"><%=error.msg; %></div>
+          <% }) %> <% } %>
         </div>
-        <div class="products-container">
-            <form action="/admin-products/add-products" method="post" enctype="multipart/form-data">
-                <div id="err_msg">
-                    <% if(typeof alert != 'undefined'){ %> 
-                        <% alert.forEach(function(error){ %>
-                            <div role="alert"><%=error.msg;  %> </div> 
-                        <% }) %> 
-                        <% } %>
-                </div>
 
-            <div class="sub-main">
-                <div class="sub-main">
-                    <label class="lables" for="text">Title:</label>
-                    <input class="inputs" type="text" name="name" placeholder="Name of product" >
-                </div>
-                <div class="sub-main">
-                    <label class="lables" for="text">Desc</label>
-                    <textarea name="description" id="desc" cols="60" rows="5" placeholder="Description" ></textarea>
-                </div class="sub-main">
-                <div class="sub-main">
-                    <label class="lables" for="text">price:</label>
-                    <input class="inputs" type="text" name="price" placeholder="price">
-                </div>
-                <div class="sub-main">
-                    <label class="lables" for="text">Catagory:</label>
-                  <select name="catagory" id=""> 
-                    <option>T-shirt</option>
-                    <option>Friuts</option>
-                    </select>
-                </div>
-                <div class="sub-main">
-                    <input class="inputs" type="file" name="img" accept="image/*">
-                </div>
-                <div class="submitdiv">
-                    <input type="submit" id="submit">
-                </div>
+        <div class="">
+          <div class="sub-main">
+            <label class="lables" for="text">Name of product:</label>
+            <div>
+              <input
+                class="inputs"
+                type="text"
+                name="name"
+                placeholder="Name of product"
+              />
             </div>
-        </form>
+
+            <label class="lables" for="text">Desc</label>
+            <div>
+              <textarea
+                name="description"
+                id="desc"
+                cols="60"
+                rows="5"
+                placeholder="Description"
+              ></textarea>
+            </div>
+
+            <label class="lables" for="text">price:</label>
+            <div>
+              <input
+                class="inputs"
+                type="text"
+                name="price"
+                placeholder="price"
+              />
+            </div>
+
+            <label class="lables" for="text">Catagory:</label>
+            <div>
+              <select name="catagory" id="">
+                <option>Cloth</option>
+                <option>Friuts</option>
+                <option>Food</option>
+                <option>Cell phone</option>
+                <option>House Matrial</option>
+              </select>
+            </div>
+
+            <div>
+              <input class="inputs" type="file" name="img" accept="image/*" />
+            </div>
+
+            <input type="submit" id="submit" />
+          </div>
         </div>
-<div id="gallry">
-    <form action="/admin-products/add-products" method="post" enctype="multipart/form-data">
-        
-    </form>
-</div>
-</body>
+      </form>
+    </div>
+    <div id="gallry">
+      <form
+        action="/admin-products/add-products"
+        method="post"
+        enctype="multipart/form-data"
+      ></form>
+    </div>
+  </body>
 </html>

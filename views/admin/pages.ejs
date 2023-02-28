@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/adminheader.ejs')  %> 
-    <title>Admin</title>
-<body>
-    <body >
-        <div id="addnew">
-            <h4  class="addprod"><a href="/admin/pages/add-page">Add new page</a></h4>
-    
-        </div>
-    <div id="load">
-        <h4  class="addprod"><a href="/admin/pages/add-page/load">Ses products</a></h4>
-    </div>
+  <%-include('../partials/adminheader.ejs') %>
+  <title>Admin</title>
+  <body>
+    <div class="pagePart">
+      <div id="addnew">
+        <h4 class="addprod">
+          <a href="/admin/pages/add-page">Add new page</a>
+        </h4>
+      </div>
+      <!-- <div id="load">
+        <h4 class="addprod">
+          <a href="/admin/pages/add-page/load">Ses products</a>
+        </h4>
+      </div> -->
 
-
-   <table>
-    <thead>
-        <tr>
+      <table class="pagestable">
+        <thead>
+          <tr>
             <th>Title</th>
             <th>Edit</th>
             <th>Delete</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        <tr>
-            <%if(result.length>0){%>
-                <%result.forEach(function(rows){%>
-            <td><%=rows.title%> </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <%if(result.length>0){%> <%result.forEach(function(rows){%>
+            <td><%=rows.title%></td>
             <td><a href="/admin/pages/edit-page/<%=rows.id%> ">Edit</a></td>
-            <td><a href="/admin/pages/delete-page/<%=rows.id %> ">Delete</a></td>
-        </tr> 
-            <% }) } else{%>
-           
-                <% } %>
-        
-
-    </tbody>
-   </table>
-</body>
+            <td>
+              <a href="/admin/pages/delete-page/<%=rows.id %> ">Delete</a>
+            </td>
+          </tr>
+          <% }) } else{%>
+          <h3>No Page Add</h3>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>
